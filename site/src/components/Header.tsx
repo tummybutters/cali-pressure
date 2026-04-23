@@ -62,7 +62,7 @@ export default function Header() {
           aria-label="Toggle menu"
           aria-expanded={open}
           onClick={() => setOpen((v) => !v)}
-          className="md:hidden rounded-md border border-white/10 p-2 text-white"
+          className="flex h-11 w-11 items-center justify-center rounded-md border border-white/10 text-white md:hidden"
         >
           <svg
             viewBox="0 0 24 24"

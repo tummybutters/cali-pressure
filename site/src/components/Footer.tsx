@@ -30,7 +30,7 @@ export default function Footer() {
               target="_blank"
               rel="noreferrer"
               aria-label="Instagram"
-              className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 text-white/70 hover:border-white/30 hover:text-white"
+              className="flex h-11 w-11 items-center justify-center rounded-full border border-white/10 text-white/70 hover:border-white/30 hover:text-white"
             >
               <InstagramIcon className="h-4 w-4" />
             </a>
@@ -39,14 +39,14 @@ export default function Footer() {
               target="_blank"
               rel="noreferrer"
               aria-label="Google Business"
-              className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 text-white/70 hover:border-white/30 hover:text-white"
+              className="flex h-11 w-11 items-center justify-center rounded-full border border-white/10 text-white/70 hover:border-white/30 hover:text-white"
             >
               <GoogleIcon className="h-4 w-4" />
             </a>
             <a
               href="#"
               aria-label="Facebook"
-              className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 text-white/70 hover:border-white/30 hover:text-white"
+              className="flex h-11 w-11 items-center justify-center rounded-full border border-white/10 text-white/70 hover:border-white/30 hover:text-white"
             >
               <FacebookIcon className="h-4 w-4" />
             </a>
