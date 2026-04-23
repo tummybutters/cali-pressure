@@ -1,10 +1,11 @@
 {
   "name": "california-pressure",
   "private": true,
+  "packageManager": "pnpm@10.32.1",
   "scripts": {
-    "dev": "npm --prefix ./site run dev",
-    "build": "npm --prefix ./site run build",
-    "start": "npm --prefix ./site run start",
-    "lint": "npm --prefix ./site run lint"
+    "dev": "pnpm --dir ./site run dev",
+    "build": "pnpm --dir ./site run build",
+    "start": "pnpm --dir ./site run start",
+    "lint": "pnpm --dir ./site run lint"
   }
 }
