@@ -16,7 +16,7 @@ import {
 } from "@/components/Icons";
 import { services } from "@/content/services";
 import { testimonials } from "@/content/testimonials";
-import { homeOnlyPreview, site } from "@/content/site";
+import { site } from "@/content/site";
 
 const trust = [
   {
@@ -50,7 +50,6 @@ const whyUs = [
 
 export default function HomePage() {
   const featured = testimonials.slice(0, 3);
-  const showInternalLinks = !homeOnlyPreview;
   return (
     <>
       {/* HERO */}
@@ -88,27 +87,13 @@ export default function HomePage() {
               </p>
 
               <div className="mt-8 flex flex-wrap gap-3">
-                {showInternalLinks ? (
-                  <>
-                    <Link href="/booking" className="btn-primary">
-                      Get a Free Quote
-                      <ArrowRight />
-                    </Link>
-                    <Link href="/services" className="btn-secondary">
-                      View Our Services
-                    </Link>
-                  </>
-                ) : (
-                  <>
-                    <span className="btn-primary pointer-events-none opacity-70">
-                      Get a Free Quote
-                      <ArrowRight />
-                    </span>
-                    <span className="btn-secondary pointer-events-none opacity-70">
-                      View Our Services
-                    </span>
-                  </>
-                )}
+                <Link href="/booking" className="btn-primary">
+                  Get a Free Quote
+                  <ArrowRight />
+                </Link>
+                <Link href="/services" className="btn-secondary">
+                  View Our Services
+                </Link>
               </div>
 
               <div className="mt-8 flex items-center gap-4 text-sm text-[var(--color-text-muted)]">
@@ -165,47 +150,27 @@ export default function HomePage() {
 
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {services.map((svc) => (
-              showInternalLinks ? (
-                <Link
-                  key={svc.slug}
-                  href={`/services#${svc.slug}`}
-                  className="card-surface group flex flex-col p-6"
-                >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-lg border border-[var(--color-brand-blue)]/40 bg-[var(--color-brand-blue)]/10 text-[var(--color-brand-blue-bright)]">
-                    <ServiceIconByKey
-                      iconKey={svc.iconKey}
-                      className="h-6 w-6"
-                    />
-                  </div>
-                  <h3 className="mt-5 text-xl font-semibold text-white">
-                    {svc.title}
-                  </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-[var(--color-text-muted)]">
-                    {svc.short}
-                  </p>
-                  <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[var(--color-brand-blue-bright)] group-hover:text-white">
-                    Learn More <ArrowRight />
-                  </span>
-                </Link>
-              ) : (
-                <div key={svc.slug} className="card-surface flex flex-col p-6">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-lg border border-[var(--color-brand-blue)]/40 bg-[var(--color-brand-blue)]/10 text-[var(--color-brand-blue-bright)]">
-                    <ServiceIconByKey
-                      iconKey={svc.iconKey}
-                      className="h-6 w-6"
-                    />
-                  </div>
-                  <h3 className="mt-5 text-xl font-semibold text-white">
-                    {svc.title}
-                  </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-[var(--color-text-muted)]">
-                    {svc.short}
-                  </p>
-                  <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[var(--color-brand-blue-bright)] opacity-70">
-                    Learn More <ArrowRight />
-                  </span>
+              <Link
+                key={svc.slug}
+                href={`/services#${svc.slug}`}
+                className="card-surface group flex flex-col p-6"
+              >
+                <div className="flex h-12 w-12 items-center justify-center rounded-lg border border-[var(--color-brand-blue)]/40 bg-[var(--color-brand-blue)]/10 text-[var(--color-brand-blue-bright)]">
+                  <ServiceIconByKey
+                    iconKey={svc.iconKey}
+                    className="h-6 w-6"
+                  />
                 </div>
-              )
+                <h3 className="mt-5 text-xl font-semibold text-white">
+                  {svc.title}
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-[var(--color-text-muted)]">
+                  {svc.short}
+                </p>
+                <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[var(--color-brand-blue-bright)] group-hover:text-white">
+                  Learn More <ArrowRight />
+                </span>
+              </Link>
             ))}
           </div>
         </Container>
@@ -241,17 +206,10 @@ export default function HomePage() {
                 ))}
               </ul>
 
-              {showInternalLinks ? (
-                <Link href="/booking" className="btn-primary mt-8">
-                  Get a Free Quote
-                  <ArrowRight />
-                </Link>
-              ) : (
-                <span className="btn-primary mt-8 pointer-events-none opacity-70">
-                  Get a Free Quote
-                  <ArrowRight />
-                </span>
-              )}
+              <Link href="/booking" className="btn-primary mt-8">
+                Get a Free Quote
+                <ArrowRight />
+              </Link>
             </div>
 
             <BeforeAfter
@@ -280,21 +238,14 @@ export default function HomePage() {
             ))}
           </div>
           <div className="mt-10 text-center">
-            {showInternalLinks ? (
-              <Link
-                href="/reviews"
-                className="btn-secondary inline-flex"
-                aria-label="See all reviews"
-              >
-                Read all {site.googleReviewCount}+ reviews
-                <ArrowRight />
-              </Link>
-            ) : (
-              <span className="btn-secondary pointer-events-none inline-flex opacity-70">
-                Read all {site.googleReviewCount}+ reviews
-                <ArrowRight />
-              </span>
-            )}
+            <Link
+              href="/reviews"
+              className="btn-secondary inline-flex"
+              aria-label="See all reviews"
+            >
+              Read all {site.googleReviewCount}+ reviews
+              <ArrowRight />
+            </Link>
           </div>
         </Container>
       </section>

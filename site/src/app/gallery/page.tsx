@@ -1,14 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
-import { redirect } from "next/navigation";
 import Container from "@/components/Container";
 import PageHero from "@/components/PageHero";
 import CTABand from "@/components/CTABand";
 import BeforeAfter from "@/components/BeforeAfter";
 import { ArrowRight } from "@/components/Icons";
 import { gallery } from "@/content/gallery";
-import { homeOnlyPreview, site } from "@/content/site";
+import { site } from "@/content/site";
 
 export const metadata: Metadata = {
   title: "Gallery",
@@ -16,11 +15,14 @@ export const metadata: Metadata = {
     "Real before & after photos from California Pressure Washing jobs across San Diego — driveways, walkways, patios and entry slabs.",
 };
 
-export default function GalleryPage() {
-  if (homeOnlyPreview) {
-    redirect("/");
-  }
+const categories = [
+  { label: "Driveways", count: 5 },
+  { label: "Walkways", count: 5 },
+  { label: "Patios", count: 2 },
+  { label: "Specialty stains", count: 4 },
+];
 
+export default function GalleryPage() {
   const featured = gallery[4]; // job-05: full driveway with heavy oil
   const rest = gallery.filter((g) => g.id !== featured.id);
 
@@ -45,6 +47,21 @@ export default function GalleryPage() {
               <p className="mt-5 max-w-md text-base text-[var(--color-text-muted)]">
                 {featured.description}
               </p>
+              <div className="mt-6 grid grid-cols-2 gap-3 sm:max-w-md">
+                {categories.map((category) => (
+                  <div
+                    key={category.label}
+                    className="rounded-xl border border-white/10 bg-white/[0.03] p-4"
+                  >
+                    <p className="serif-head text-3xl text-[var(--color-brand-yellow)]">
+                      {category.count}
+                    </p>
+                    <p className="mt-1 text-xs uppercase tracking-[0.18em] text-[var(--color-text-muted)]">
+                      {category.label}
+                    </p>
+                  </div>
+                ))}
+              </div>
               <div className="mt-6 flex flex-wrap gap-2">
                 {featured.tags.map((t) => (
                   <span
@@ -86,7 +103,8 @@ export default function GalleryPage() {
               </h2>
             </div>
             <p className="max-w-md text-sm text-[var(--color-text-muted)]">
-              Click any card to see the before/after side by side.
+              Real transformations from the current project library, kept
+              direct and visual so people can see the kind of finish to expect.
             </p>
           </div>
 
@@ -139,15 +157,21 @@ export default function GalleryPage() {
             <p className="text-sm text-[var(--color-text-muted)]">
               Want to see more? Follow us on Instagram for weekly project posts.
             </p>
-            <a
-              href={site.instagram}
-              target="_blank"
-              rel="noreferrer"
-              className="btn-secondary"
-            >
-              @california.pressure on Instagram
-              <ArrowRight />
-            </a>
+            <div className="flex flex-wrap justify-center gap-3">
+              <a
+                href={site.instagram}
+                target="_blank"
+                rel="noreferrer"
+                className="btn-secondary"
+              >
+                @california.pressure on Instagram
+                <ArrowRight />
+              </a>
+              <Link href="/booking" className="btn-primary">
+                Get a Similar Result
+                <ArrowRight />
+              </Link>
+            </div>
           </div>
         </Container>
       </section>

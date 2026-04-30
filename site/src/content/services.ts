@@ -4,6 +4,10 @@ export type Service = {
   short: string;
   long: string;
   bullets: string[];
+  bestFor: string[];
+  result: string;
+  image: string;
+  imageAlt: string;
   iconKey:
     | "concrete"
     | "sealing"
@@ -27,6 +31,10 @@ export const services: Service[] = [
       "Specialty removal: oil, slurry tracking, rust, algae",
       "Even finish with no zebra-striping",
     ],
+    bestFor: ["Driveways", "Walkways", "Patios", "Oil stains"],
+    result: "The curb-appeal reset most homes need first.",
+    image: "/gallery/job-05-after.jpg",
+    imageAlt: "Freshly cleaned two-car concrete driveway",
   },
   {
     slug: "concrete-sealing",
@@ -41,6 +49,10 @@ export const services: Service[] = [
       "Repels oil, water and stains for 2–3 years",
       "Matte finish — keeps the natural concrete look",
     ],
+    bestFor: ["Freshly washed concrete", "Driveways", "Pool decks", "Patios"],
+    result: "Keeps the clean surface easier to maintain.",
+    image: "/gallery/job-13-after.jpg",
+    imageAlt: "Clean residential driveway after pressure washing",
   },
   {
     slug: "roof-wash",
@@ -55,6 +67,10 @@ export const services: Service[] = [
       "Kills algae and moss at the root",
       "Improves curb appeal and extends roof life",
     ],
+    bestFor: ["Tile roofs", "Shingle roofs", "Algae streaks", "Moss"],
+    result: "A safer roof refresh without blasting force.",
+    image: "/hero/driveway-hero-premium.webp",
+    imageAlt: "Clean San Diego home exterior after service",
   },
   {
     slug: "house-wash",
@@ -69,6 +85,10 @@ export const services: Service[] = [
       "Removes mildew, spider webs, bird droppings, dust",
       "Pre-listing prep and annual refresh",
     ],
+    bestFor: ["Stucco", "Siding", "Eaves", "Pre-sale prep"],
+    result: "The whole exterior looks cared for again.",
+    image: "/gallery/job-03-after.jpg",
+    imageAlt: "Clean front entry path beside a San Diego home",
   },
   {
     slug: "solar-cleaning",
@@ -83,6 +103,10 @@ export const services: Service[] = [
       "Soft bristle wash — will not void panel warranty",
       "Boost output and protect your investment",
     ],
+    bestFor: ["Dust", "Pollen", "Bird droppings", "Marine haze"],
+    result: "Clear panels, clean glass, and no abrasive chemicals.",
+    image: "/gallery/job-11-after.jpg",
+    imageAlt: "Bright clean exterior walkway after washing",
   },
   {
     slug: "window-cleaning",
@@ -97,6 +121,10 @@ export const services: Service[] = [
       "Frame, sill and track detail included",
       "Perfect for pre-sale, post-construction or spring clean",
     ],
+    bestFor: ["Interior panes", "Exterior panes", "Tracks", "Frames"],
+    result: "Sharper light through the parts of the home people notice.",
+    image: "/gallery/job-08-after.jpg",
+    imageAlt: "Clean courtyard and exterior surfaces after washing",
   },
 ];
 

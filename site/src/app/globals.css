@@ -84,6 +84,7 @@ body {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
+  min-height: 44px;
   background: linear-gradient(180deg, var(--color-brand-blue) 0%, var(--color-brand-blue-dark) 100%);
   color: #fff;
   font-weight: 600;
@@ -104,6 +105,7 @@ body {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
+  min-height: 44px;
   background: rgba(255, 255, 255, 0.04);
   color: #fff;
   font-weight: 600;
@@ -123,6 +125,7 @@ body {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
+  min-height: 44px;
   background: linear-gradient(180deg, var(--color-brand-yellow-bright) 0%, var(--color-brand-yellow) 100%);
   color: #231b00;
   font-weight: 700;
@@ -157,6 +160,16 @@ body {
 }
 .accent-blue {
   color: var(--color-brand-blue-bright);
+}
+
+select option {
+  color: #111;
+}
+
+input,
+select,
+textarea {
+  min-height: 44px;
 }
 
 /* Before/after slider */

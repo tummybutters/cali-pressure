@@ -17,8 +17,6 @@ export const site = {
   googleRating: 5.0,
 };
 
-export const homeOnlyPreview = true;
-
 export const nav = [
   { label: "Home", href: "/" },
   { label: "Services", href: "/services" },

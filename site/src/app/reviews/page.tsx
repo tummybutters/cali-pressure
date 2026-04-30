@@ -1,23 +1,26 @@
+import Link from "next/link";
 import type { Metadata } from "next";
-import { redirect } from "next/navigation";
 import Container from "@/components/Container";
 import PageHero from "@/components/PageHero";
 import CTABand from "@/components/CTABand";
 import TestimonialCard from "@/components/TestimonialCard";
 import { ArrowRight, GoogleIcon, StarIcon } from "@/components/Icons";
 import { testimonials } from "@/content/testimonials";
-import { homeOnlyPreview, site } from "@/content/site";
+import { site } from "@/content/site";
 
 export const metadata: Metadata = {
   title: "Reviews",
   description: `Read real Google reviews from California Pressure Washing customers across San Diego — ${site.googleReviewCount}+ five-star ratings and counting.`,
 };
 
-export default function ReviewsPage() {
-  if (homeOnlyPreview) {
-    redirect("/");
-  }
+const reviewThemes = [
+  "Careful property protection",
+  "Fast communication",
+  "Oil and stain removal",
+  "Driveways that look new",
+];
 
+export default function ReviewsPage() {
   return (
     <>
       <PageHero
@@ -75,12 +78,22 @@ export default function ReviewsPage() {
       {/* REVIEW GRID */}
       <section className="py-16 sm:py-20">
         <Container>
-          <div className="mb-10 flex items-end justify-between gap-4">
+          <div className="mb-10 flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
             <div>
               <p className="eyebrow">In Their Words</p>
               <h2 className="serif-head mt-3 text-3xl text-white sm:text-4xl">
                 {testimonials.length} pull-quotes from real customers.
               </h2>
+            </div>
+            <div className="flex max-w-xl flex-wrap gap-2 lg:justify-end">
+              {reviewThemes.map((theme) => (
+                <span
+                  key={theme}
+                  className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/75"
+                >
+                  {theme}
+                </span>
+              ))}
             </div>
           </div>
 
@@ -117,6 +130,10 @@ export default function ReviewsPage() {
               View on Google
               <ArrowRight />
             </a>
+            <Link href="/booking" className="btn-secondary">
+              Get the Same Care
+              <ArrowRight />
+            </Link>
           </div>
         </Container>
       </section>

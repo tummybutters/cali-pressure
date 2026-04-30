@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { redirect } from "next/navigation";
 import Container from "@/components/Container";
 import PageHero from "@/components/PageHero";
 import {
@@ -13,7 +12,7 @@ import {
   StarIcon,
 } from "@/components/Icons";
 import { services } from "@/content/services";
-import { homeOnlyPreview, site } from "@/content/site";
+import { site } from "@/content/site";
 
 export const metadata: Metadata = {
   title: "Booking",
@@ -35,11 +34,14 @@ const steps = [
   },
 ];
 
-export default function BookingPage() {
-  if (homeOnlyPreview) {
-    redirect("/");
-  }
+const quoteChecklist = [
+  "Photos of the surface if you have them",
+  "Rough size or number of areas",
+  "Any stains, algae, rust, or oil spots",
+  "Best day or window for the work",
+];
 
+export default function BookingPage() {
   return (
     <>
       <PageHero
@@ -130,28 +132,49 @@ export default function BookingPage() {
                   />
                 </label>
 
-                <label className="flex flex-col gap-1.5 text-sm">
-                  <span className="text-xs uppercase tracking-[0.2em] text-[var(--color-text-muted)]">
-                    Service
-                  </span>
-                  <select
-                    name="service"
-                    defaultValue=""
-                    className="rounded-lg border border-white/10 bg-white/[0.03] px-3 py-2.5 text-white focus:border-[var(--color-brand-blue)] focus:outline-none"
-                  >
-                    <option value="" disabled>
-                      Select a service
-                    </option>
-                    {services.map((s) => (
-                      <option key={s.slug} value={s.title}>
-                        {s.title}
+                <div className="grid gap-4 sm:grid-cols-2">
+                  <label className="flex flex-col gap-1.5 text-sm">
+                    <span className="text-xs uppercase tracking-[0.2em] text-[var(--color-text-muted)]">
+                      Service
+                    </span>
+                    <select
+                      name="service"
+                      defaultValue=""
+                      className="rounded-lg border border-white/10 bg-white/[0.03] px-3 py-2.5 text-white focus:border-[var(--color-brand-blue)] focus:outline-none"
+                    >
+                      <option value="" disabled>
+                        Select a service
                       </option>
-                    ))}
-                    <option value="Multiple / Not sure">
-                      Multiple / Not sure
-                    </option>
-                  </select>
-                </label>
+                      {services.map((s) => (
+                        <option key={s.slug} value={s.title}>
+                          {s.title}
+                        </option>
+                      ))}
+                      <option value="Multiple / Not sure">
+                        Multiple / Not sure
+                      </option>
+                    </select>
+                  </label>
+
+                  <label className="flex flex-col gap-1.5 text-sm">
+                    <span className="text-xs uppercase tracking-[0.2em] text-[var(--color-text-muted)]">
+                      Timing
+                    </span>
+                    <select
+                      name="timing"
+                      defaultValue=""
+                      className="rounded-lg border border-white/10 bg-white/[0.03] px-3 py-2.5 text-white focus:border-[var(--color-brand-blue)] focus:outline-none"
+                    >
+                      <option value="" disabled>
+                        Select timing
+                      </option>
+                      <option value="ASAP">ASAP</option>
+                      <option value="This week">This week</option>
+                      <option value="This month">This month</option>
+                      <option value="Flexible">Flexible</option>
+                    </select>
+                  </label>
+                </div>
 
                 <label className="flex flex-col gap-1.5 text-sm">
                   <span className="text-xs uppercase tracking-[0.2em] text-[var(--color-text-muted)]">
@@ -274,6 +297,24 @@ export default function BookingPage() {
                   You&apos;re in good company — every one of our reviewers started
                   with a message just like this one.
                 </p>
+              </div>
+
+              <div className="card-surface p-6">
+                <p className="eyebrow">Helpful Details</p>
+                <h3 className="serif-head mt-3 text-2xl text-white">
+                  What makes a quote faster?
+                </h3>
+                <ul className="mt-5 space-y-3">
+                  {quoteChecklist.map((item) => (
+                    <li
+                      key={item}
+                      className="flex items-start gap-3 text-sm text-white/85"
+                    >
+                      <CheckCircleIcon className="mt-0.5 h-5 w-5 shrink-0 text-[var(--color-brand-blue-bright)]" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
             </aside>
           </div>

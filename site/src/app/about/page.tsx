@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
-import { redirect } from "next/navigation";
 import Container from "@/components/Container";
 import PageHero from "@/components/PageHero";
 import CTABand from "@/components/CTABand";
@@ -14,7 +13,7 @@ import {
   PalmIcon,
   StarIcon,
 } from "@/components/Icons";
-import { homeOnlyPreview, site } from "@/content/site";
+import { site } from "@/content/site";
 
 export const metadata: Metadata = {
   title: "About",
@@ -75,10 +74,6 @@ const stats = [
 ];
 
 export default function AboutPage() {
-  if (homeOnlyPreview) {
-    redirect("/");
-  }
-
   return (
     <>
       <PageHero
@@ -99,6 +94,7 @@ export default function AboutPage() {
                     src="/gallery/job-05-after.jpg"
                     alt="Clean concrete driveway in San Diego"
                     fill
+                    priority
                     sizes="(min-width: 1024px) 480px, 100vw"
                     className="object-cover"
                   />
@@ -159,6 +155,17 @@ export default function AboutPage() {
                     </p>
                   </div>
                 ))}
+              </div>
+
+              <div className="mt-8 flex flex-col gap-4 rounded-2xl border border-[var(--color-brand-blue)]/20 bg-[var(--color-brand-blue)]/10 p-5 sm:flex-row sm:items-center sm:justify-between">
+                <p className="text-sm leading-relaxed text-white/85">
+                  You get a clear quote, a protected property, and a final walk
+                  through before the job is done.
+                </p>
+                <Link href="/reviews" className="btn-secondary shrink-0">
+                  Read Reviews
+                  <ArrowRight />
+                </Link>
               </div>
             </div>
           </div>

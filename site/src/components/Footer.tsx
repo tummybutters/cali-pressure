@@ -1,13 +1,12 @@
 import Link from "next/link";
 import Logo from "./Logo";
 import { services } from "@/content/services";
-import { homeOnlyPreview, site, nav } from "@/content/site";
+import { site, nav } from "@/content/site";
 import {
   PhoneIcon,
   MailIcon,
   PinIcon,
   InstagramIcon,
-  FacebookIcon,
   GoogleIcon,
   ClockIcon,
 } from "./Icons";
@@ -43,13 +42,6 @@ export default function Footer() {
             >
               <GoogleIcon className="h-4 w-4" />
             </a>
-            <a
-              href="#"
-              aria-label="Facebook"
-              className="flex h-11 w-11 items-center justify-center rounded-full border border-white/10 text-white/70 hover:border-white/30 hover:text-white"
-            >
-              <FacebookIcon className="h-4 w-4" />
-            </a>
           </div>
         </div>
 
@@ -58,15 +50,9 @@ export default function Footer() {
           <ul className="space-y-2 text-sm text-[var(--color-text-muted)]">
             {nav.map((item) => (
               <li key={item.href}>
-                {homeOnlyPreview && item.href !== "/" ? (
-                  <span className="cursor-default text-[var(--color-text-dim)]">
-                    {item.label}
-                  </span>
-                ) : (
-                  <Link href={item.href} className="hover:text-white">
-                    {item.label}
-                  </Link>
-                )}
+                <Link href={item.href} className="hover:text-white">
+                  {item.label}
+                </Link>
               </li>
             ))}
           </ul>
@@ -77,18 +63,12 @@ export default function Footer() {
           <ul className="space-y-2 text-sm text-[var(--color-text-muted)]">
             {services.map((s) => (
               <li key={s.slug}>
-                {homeOnlyPreview ? (
-                  <span className="cursor-default text-[var(--color-text-dim)]">
-                    {s.title}
-                  </span>
-                ) : (
-                  <Link
-                    href={`/services#${s.slug}`}
-                    className="hover:text-white"
-                  >
-                    {s.title}
-                  </Link>
-                )}
+                <Link
+                  href={`/services#${s.slug}`}
+                  className="hover:text-white"
+                >
+                  {s.title}
+                </Link>
               </li>
             ))}
           </ul>

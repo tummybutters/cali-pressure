@@ -1,7 +1,6 @@
 import Link from "next/link";
 import Container from "./Container";
 import { ArrowRight, CalendarIcon } from "./Icons";
-import { homeOnlyPreview } from "@/content/site";
 
 export default function CTABand({
   title = "Ready for a Cleaner Property?",
@@ -28,17 +27,10 @@ export default function CTABand({
             </div>
           </div>
 
-          {homeOnlyPreview ? (
-            <span className="btn-yellow pointer-events-none opacity-70">
-              Get a Free Quote
-              <ArrowRight />
-            </span>
-          ) : (
-            <Link href="/booking" className="btn-yellow">
-              Get a Free Quote
-              <ArrowRight />
-            </Link>
-          )}
+          <Link href="/booking" className="btn-yellow">
+            Get a Free Quote
+            <ArrowRight />
+          </Link>
         </div>
       </Container>
     </section>
