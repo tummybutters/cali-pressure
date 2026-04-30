@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import Container from "@/components/Container";
 import PageHero from "@/components/PageHero";
+import QuoteRequestForm from "@/components/QuoteRequestForm";
 import {
-  ArrowRight,
   CheckCircleIcon,
   ClockIcon,
   InstagramIcon,
@@ -11,7 +11,6 @@ import {
   PinIcon,
   StarIcon,
 } from "@/components/Icons";
-import { services } from "@/content/services";
 import { site } from "@/content/site";
 
 export const metadata: Metadata = {
@@ -56,149 +55,7 @@ export default function BookingPage() {
           <div className="grid gap-10 lg:grid-cols-12 lg:gap-12">
             {/* FORM */}
             <div className="lg:col-span-7">
-              <form
-                action={`mailto:${site.email}`}
-                method="post"
-                encType="text/plain"
-                className="card-surface flex flex-col gap-5 p-6 sm:p-8"
-              >
-                <div>
-                  <p className="eyebrow">Request a Quote</p>
-                  <h2 className="serif-head mt-3 text-3xl text-white sm:text-4xl">
-                    Send us the details.
-                  </h2>
-                  <p className="mt-3 text-sm text-[var(--color-text-muted)]">
-                    We reply by phone, text or email — your choice. In a hurry?
-                    Call{" "}
-                    <a
-                      href={site.phoneHref}
-                      className="font-semibold text-[var(--color-brand-blue-bright)] hover:text-white"
-                    >
-                      {site.phone}
-                    </a>
-                    .
-                  </p>
-                </div>
-
-                <div className="grid gap-4 sm:grid-cols-2">
-                  <label className="flex flex-col gap-1.5 text-sm">
-                    <span className="text-xs uppercase tracking-[0.2em] text-[var(--color-text-muted)]">
-                      Name
-                    </span>
-                    <input
-                      name="name"
-                      required
-                      type="text"
-                      className="rounded-lg border border-white/10 bg-white/[0.03] px-3 py-2.5 text-white placeholder:text-white/30 focus:border-[var(--color-brand-blue)] focus:outline-none"
-                      placeholder="Your name"
-                    />
-                  </label>
-                  <label className="flex flex-col gap-1.5 text-sm">
-                    <span className="text-xs uppercase tracking-[0.2em] text-[var(--color-text-muted)]">
-                      Phone
-                    </span>
-                    <input
-                      name="phone"
-                      required
-                      type="tel"
-                      className="rounded-lg border border-white/10 bg-white/[0.03] px-3 py-2.5 text-white placeholder:text-white/30 focus:border-[var(--color-brand-blue)] focus:outline-none"
-                      placeholder="(555) 555-5555"
-                    />
-                  </label>
-                </div>
-
-                <label className="flex flex-col gap-1.5 text-sm">
-                  <span className="text-xs uppercase tracking-[0.2em] text-[var(--color-text-muted)]">
-                    Email
-                  </span>
-                  <input
-                    name="email"
-                    required
-                    type="email"
-                    className="rounded-lg border border-white/10 bg-white/[0.03] px-3 py-2.5 text-white placeholder:text-white/30 focus:border-[var(--color-brand-blue)] focus:outline-none"
-                    placeholder="you@example.com"
-                  />
-                </label>
-
-                <label className="flex flex-col gap-1.5 text-sm">
-                  <span className="text-xs uppercase tracking-[0.2em] text-[var(--color-text-muted)]">
-                    Address (optional)
-                  </span>
-                  <input
-                    name="address"
-                    type="text"
-                    className="rounded-lg border border-white/10 bg-white/[0.03] px-3 py-2.5 text-white placeholder:text-white/30 focus:border-[var(--color-brand-blue)] focus:outline-none"
-                    placeholder="Street, City"
-                  />
-                </label>
-
-                <div className="grid gap-4 sm:grid-cols-2">
-                  <label className="flex flex-col gap-1.5 text-sm">
-                    <span className="text-xs uppercase tracking-[0.2em] text-[var(--color-text-muted)]">
-                      Service
-                    </span>
-                    <select
-                      name="service"
-                      defaultValue=""
-                      className="rounded-lg border border-white/10 bg-white/[0.03] px-3 py-2.5 text-white focus:border-[var(--color-brand-blue)] focus:outline-none"
-                    >
-                      <option value="" disabled>
-                        Select a service
-                      </option>
-                      {services.map((s) => (
-                        <option key={s.slug} value={s.title}>
-                          {s.title}
-                        </option>
-                      ))}
-                      <option value="Multiple / Not sure">
-                        Multiple / Not sure
-                      </option>
-                    </select>
-                  </label>
-
-                  <label className="flex flex-col gap-1.5 text-sm">
-                    <span className="text-xs uppercase tracking-[0.2em] text-[var(--color-text-muted)]">
-                      Timing
-                    </span>
-                    <select
-                      name="timing"
-                      defaultValue=""
-                      className="rounded-lg border border-white/10 bg-white/[0.03] px-3 py-2.5 text-white focus:border-[var(--color-brand-blue)] focus:outline-none"
-                    >
-                      <option value="" disabled>
-                        Select timing
-                      </option>
-                      <option value="ASAP">ASAP</option>
-                      <option value="This week">This week</option>
-                      <option value="This month">This month</option>
-                      <option value="Flexible">Flexible</option>
-                    </select>
-                  </label>
-                </div>
-
-                <label className="flex flex-col gap-1.5 text-sm">
-                  <span className="text-xs uppercase tracking-[0.2em] text-[var(--color-text-muted)]">
-                    Tell us about the job
-                  </span>
-                  <textarea
-                    name="message"
-                    rows={5}
-                    required
-                    className="rounded-lg border border-white/10 bg-white/[0.03] px-3 py-2.5 text-white placeholder:text-white/30 focus:border-[var(--color-brand-blue)] focus:outline-none"
-                    placeholder="Surface type, approx. square footage, timeline, anything we should know…"
-                  />
-                </label>
-
-                <div className="flex flex-wrap items-center justify-between gap-4 pt-2">
-                  <p className="text-xs text-[var(--color-text-muted)]">
-                    We&apos;ll never share your info.
-                  </p>
-                  <button type="submit" className="btn-primary">
-                    Send Request
-                    <ArrowRight />
-                  </button>
-                </div>
-              </form>
+              <QuoteRequestForm />
             </div>
 
             {/* SIDEBAR */}
