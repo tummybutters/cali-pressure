@@ -213,11 +213,11 @@ export default function HomePage() {
             </div>
 
             <BeforeAfter
-              before="/gallery/job-05-before.jpg"
-              after="/gallery/job-05-after.jpg"
-              beforeAlt="Dirty driveway before pressure washing"
-              afterAlt="Clean driveway after pressure washing"
-              aspect="4 / 3"
+              before="/client-images/home-slider-before.jpg"
+              after="/client-images/home-slider-after.jpg"
+              beforeAlt="Dirty concrete entry before pressure washing"
+              afterAlt="Clean concrete entry after pressure washing"
+              aspect="4 / 5"
             />
           </div>
         </Container>

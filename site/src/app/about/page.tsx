@@ -91,8 +91,8 @@ export default function AboutPage() {
               <div className="relative overflow-hidden rounded-2xl border border-white/10">
                 <div className="relative aspect-[4/5]">
                   <Image
-                    src="/gallery/job-05-after.jpg"
-                    alt="Clean concrete driveway in San Diego"
+                    src="/client-images/about-ivan.jpg"
+                    alt={`${site.ownerFirst}, owner of California Pressure Washing`}
                     fill
                     priority
                     sizes="(min-width: 1024px) 480px, 100vw"

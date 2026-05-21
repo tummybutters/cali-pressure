@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   },
   description:
     "Owner-operated pressure washing in San Diego. Concrete, roof wash, house wash, solar and window cleaning. 50+ five-star Google reviews.",
-  metadataBase: new URL("https://californiapw.com"),
+  metadataBase: new URL("https://californiapressure.com"),
 };
 
 export default function RootLayout({

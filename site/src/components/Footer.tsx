@@ -7,8 +7,9 @@ import {
   MailIcon,
   PinIcon,
   InstagramIcon,
-  GoogleIcon,
+  GoogleMapsIcon,
   ClockIcon,
+  TikTokIcon,
 } from "./Icons";
 
 export default function Footer() {
@@ -31,16 +32,25 @@ export default function Footer() {
               aria-label="Instagram"
               className="flex h-11 w-11 items-center justify-center rounded-full border border-white/10 text-white/70 hover:border-white/30 hover:text-white"
             >
-              <InstagramIcon className="h-4 w-4" />
+              <InstagramIcon className="h-5 w-5" />
+            </a>
+            <a
+              href={site.tiktok}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="TikTok"
+              className="flex h-11 w-11 items-center justify-center rounded-full border border-white/10 text-white/70 hover:border-white/30 hover:text-white"
+            >
+              <TikTokIcon className="h-5 w-5" />
             </a>
             <a
               href={site.googleBusiness}
               target="_blank"
               rel="noreferrer"
-              aria-label="Google Business"
+              aria-label="Google Maps"
               className="flex h-11 w-11 items-center justify-center rounded-full border border-white/10 text-white/70 hover:border-white/30 hover:text-white"
             >
-              <GoogleIcon className="h-4 w-4" />
+              <GoogleMapsIcon className="h-5 w-5" />
             </a>
           </div>
         </div>
@@ -74,31 +84,34 @@ export default function Footer() {
           </ul>
         </div>
 
-        <div>
+        <div className="min-w-0">
           <h3 className="mb-4 text-sm font-semibold text-white">Contact</h3>
           <ul className="space-y-3 text-sm text-[var(--color-text-muted)]">
-            <li className="flex items-start gap-3">
-              <PhoneIcon className="mt-0.5 h-4 w-4 text-[var(--color-brand-blue-bright)]" />
+            <li className="flex min-w-0 items-start gap-3">
+              <PhoneIcon className="mt-0.5 h-4 w-4 shrink-0 text-[var(--color-brand-blue-bright)]" />
               <a href={site.phoneHref} className="hover:text-white">
                 {site.phone}
               </a>
             </li>
-            <li className="flex items-start gap-3">
-              <MailIcon className="mt-0.5 h-4 w-4 text-[var(--color-brand-blue-bright)]" />
-              <a href={`mailto:${site.email}`} className="hover:text-white">
+            <li className="flex min-w-0 items-start gap-3">
+              <MailIcon className="mt-0.5 h-4 w-4 shrink-0 text-[var(--color-brand-blue-bright)]" />
+              <a
+                href={`mailto:${site.email}`}
+                className="min-w-0 break-words hover:text-white"
+              >
                 {site.email}
               </a>
             </li>
-            <li className="flex items-start gap-3">
-              <PinIcon className="mt-0.5 h-4 w-4 text-[var(--color-brand-blue-bright)]" />
-              <span>
+            <li className="flex min-w-0 items-start gap-3">
+              <PinIcon className="mt-0.5 h-4 w-4 shrink-0 text-[var(--color-brand-blue-bright)]" />
+              <span className="min-w-0">
                 Serving {site.city}
                 <br /> and {site.region}
               </span>
             </li>
-            <li className="flex items-start gap-3">
-              <ClockIcon className="mt-0.5 h-4 w-4 text-[var(--color-brand-blue-bright)]" />
-              <span>{site.hours}</span>
+            <li className="flex min-w-0 items-start gap-3">
+              <ClockIcon className="mt-0.5 h-4 w-4 shrink-0 text-[var(--color-brand-blue-bright)]" />
+              <span className="min-w-0">{site.hours}</span>
             </li>
           </ul>
         </div>

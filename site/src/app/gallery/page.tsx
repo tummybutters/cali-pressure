@@ -16,14 +16,14 @@ export const metadata: Metadata = {
 };
 
 const categories = [
-  { label: "Driveways", count: 5 },
-  { label: "Walkways", count: 5 },
-  { label: "Patios", count: 2 },
-  { label: "Specialty stains", count: 4 },
+  { label: "Concrete", count: 4 },
+  { label: "House wash", count: 3 },
+  { label: "Solar & roof", count: 2 },
+  { label: "Walkways", count: 3 },
 ];
 
 export default function GalleryPage() {
-  const featured = gallery[4]; // job-05: full driveway with heavy oil
+  const featured = gallery.find((g) => g.id === "job-07") ?? gallery[0];
   const rest = gallery.filter((g) => g.id !== featured.id);
 
   return (
@@ -32,7 +32,7 @@ export default function GalleryPage() {
         eyebrow="Our Work"
         title="Real results."
         accent="Real San Diego homes."
-        lead={`Every photo below is an actual California Pressure Washing job. Drag the slider on the featured job to see the transformation — and scan the grid for ${gallery.length} more.`}
+        lead={`Every photo below is an actual California Pressure Washing job. Drag the slider on the featured job to see the transformation — and scan the grid for ${rest.length} more.`}
       />
 
       {/* FEATURED BEFORE / AFTER */}
@@ -155,7 +155,8 @@ export default function GalleryPage() {
 
           <div className="mt-12 flex flex-col items-center gap-3 text-center">
             <p className="text-sm text-[var(--color-text-muted)]">
-              Want to see more? Follow us on Instagram for weekly project posts.
+              Want to see more? Follow us on Instagram and TikTok for weekly
+              project posts.
             </p>
             <div className="flex flex-wrap justify-center gap-3">
               <a
@@ -165,6 +166,15 @@ export default function GalleryPage() {
                 className="btn-secondary"
               >
                 @california.pressure on Instagram
+                <ArrowRight />
+              </a>
+              <a
+                href={site.tiktok}
+                target="_blank"
+                rel="noreferrer"
+                className="btn-secondary"
+              >
+                @californiapressure on TikTok
                 <ArrowRight />
               </a>
               <Link href="/booking" className="btn-primary">

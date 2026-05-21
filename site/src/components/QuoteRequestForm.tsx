@@ -37,7 +37,6 @@ export default function QuoteRequestForm() {
   const [method, setMethod] = useState<ContactMethod>("text");
   const [form, setForm] = useState(initialForm);
 
-  const destination = method === "text" ? site.phone : site.email;
   const actionLabel = method === "text" ? "Open Messages" : "Open Email";
 
   const composeHref = useMemo(() => {
@@ -83,6 +82,7 @@ export default function QuoteRequestForm() {
           { key: "email" as const, label: "Email", Icon: MailIcon },
         ].map(({ key, label, Icon }) => {
           const active = method === key;
+          const destination = key === "text" ? site.phone : site.email;
           return (
             <button
               key={key}

@@ -8,6 +8,7 @@ export type Service = {
   result: string;
   image: string;
   imageAlt: string;
+  imageFit?: "cover" | "contain";
   iconKey:
     | "concrete"
     | "sealing"
@@ -33,8 +34,9 @@ export const services: Service[] = [
     ],
     bestFor: ["Driveways", "Walkways", "Patios", "Oil stains"],
     result: "The curb-appeal reset most homes need first.",
-    image: "/gallery/job-05-after.jpg",
-    imageAlt: "Freshly cleaned two-car concrete driveway",
+    image: "/client-images/concrete-cleaning-driveway.jpg",
+    imageAlt: "Concrete driveway before and after pressure washing",
+    imageFit: "contain",
   },
   {
     slug: "concrete-sealing",
@@ -43,16 +45,16 @@ export const services: Service[] = [
     short:
       "Protect and enhance your concrete surfaces with long-lasting sealants that resist stains and weather.",
     long:
-      "Sealing locks in the clean and makes the next wash dramatically easier. We finish freshly cleaned concrete with a breathable penetrating sealer that repels oil, water and UV damage without changing the surface texture.",
+      "Sealing locks in the clean and makes the next wash dramatically easier. We finish freshly cleaned concrete with a protective sealer that repels oil, water and UV damage, with matte or wet-look finish options depending on the surface and style.",
     bullets: [
       "Recommended after every deep clean",
       "Repels oil, water and stains for 2–3 years",
-      "Matte finish — keeps the natural concrete look",
+      "Choice of matte or wet-look finish",
     ],
-    bestFor: ["Freshly washed concrete", "Driveways", "Pool decks", "Patios"],
-    result: "Keeps the clean surface easier to maintain.",
-    image: "/gallery/job-13-after.jpg",
-    imageAlt: "Clean residential driveway after pressure washing",
+    bestFor: ["Freshly washed concrete", "Stamped concrete", "Pool decks", "Patios"],
+    result: "A protected finish in the look you prefer.",
+    image: "/client-images/concrete-sealing-wet-look.jpg",
+    imageAlt: "Wet-look sealed stamped concrete walkway",
   },
   {
     slug: "roof-wash",
@@ -69,8 +71,9 @@ export const services: Service[] = [
     ],
     bestFor: ["Tile roofs", "Shingle roofs", "Algae streaks", "Moss"],
     result: "A safer roof refresh without blasting force.",
-    image: "/hero/driveway-hero-premium.webp",
-    imageAlt: "Clean San Diego home exterior after service",
+    image: "/client-images/roof-wash-collage.jpg",
+    imageAlt: "Tile roof before and after roof wash service",
+    imageFit: "contain",
   },
   {
     slug: "house-wash",
@@ -87,8 +90,9 @@ export const services: Service[] = [
     ],
     bestFor: ["Stucco", "Siding", "Eaves", "Pre-sale prep"],
     result: "The whole exterior looks cared for again.",
-    image: "/gallery/job-03-after.jpg",
-    imageAlt: "Clean front entry path beside a San Diego home",
+    image: "/client-images/house-wash.jpg",
+    imageAlt: "Stone home exterior before and after house wash service",
+    imageFit: "contain",
   },
   {
     slug: "solar-cleaning",
@@ -105,8 +109,9 @@ export const services: Service[] = [
     ],
     bestFor: ["Dust", "Pollen", "Bird droppings", "Marine haze"],
     result: "Clear panels, clean glass, and no abrasive chemicals.",
-    image: "/gallery/job-11-after.jpg",
-    imageAlt: "Bright clean exterior walkway after washing",
+    image: "/client-images/solar-cleaning-collage.jpg",
+    imageAlt: "Solar panels before and after solar cleaning",
+    imageFit: "contain",
   },
   {
     slug: "window-cleaning",
@@ -123,8 +128,9 @@ export const services: Service[] = [
     ],
     bestFor: ["Interior panes", "Exterior panes", "Tracks", "Frames"],
     result: "Sharper light through the parts of the home people notice.",
-    image: "/gallery/job-08-after.jpg",
-    imageAlt: "Clean courtyard and exterior surfaces after washing",
+    image: "/client-images/window-cleaning.jpg",
+    imageAlt: "Window cleaning with a squeegee on glass",
+    imageFit: "contain",
   },
 ];
 

@@ -138,7 +138,11 @@ export default function ServicesPage() {
                           alt={svc.imageAlt}
                           fill
                           sizes="(min-width: 1024px) 260px, (min-width: 640px) 40vw, 100vw"
-                          className="object-cover"
+                          className={
+                            svc.imageFit === "contain"
+                              ? "object-contain bg-[var(--color-ink-950)]"
+                              : "object-cover"
+                          }
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-ink-950)] via-transparent to-transparent" />
                         <p className="absolute bottom-4 left-4 right-4 text-sm font-semibold text-white">
