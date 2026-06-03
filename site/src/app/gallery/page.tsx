@@ -78,14 +78,24 @@ export default function GalleryPage() {
               </Link>
             </div>
 
-            <BeforeAfter
-              before={featured.before}
-              after={featured.after}
-              beforeAlt={`${featured.title} — before`}
-              afterAlt={`${featured.title} — after`}
-              aspect="4 / 3"
-              objectPosition="left center"
-            />
+            <div className="relative aspect-[4/3] overflow-hidden rounded-xl">
+              <Image
+                src={featured.collage}
+                alt={`${featured.title} — before and after`}
+                fill
+                sizes="(min-width: 1024px) 640px, 100vw"
+                priority
+                className="object-cover object-left"
+              />
+              <div className="absolute inset-x-0 bottom-0 flex gap-2 p-4">
+                <span className="rounded bg-black/70 px-2.5 py-1 text-[11px] font-semibold tracking-[0.2em] text-white/90">
+                  BEFORE
+                </span>
+                <span className="rounded bg-[var(--color-brand-yellow)]/90 px-2.5 py-1 text-[11px] font-semibold tracking-[0.2em] text-[var(--color-ink-950)]">
+                  AFTER
+                </span>
+              </div>
+            </div>
           </div>
         </Container>
       </section>
