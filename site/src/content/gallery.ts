@@ -42,6 +42,7 @@ export const gallery: GalleryJob[] = [
     before: "/client-images/gallery-entry-wall-collage.jpg",
     after: "/client-images/gallery-entry-wall-collage.jpg",
     tags: ["Entry", "House Wash"],
+    flipCollage: true,
   },
   {
     id: "job-08",
