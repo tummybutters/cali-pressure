@@ -66,13 +66,13 @@ export const gallery: GalleryJob[] = [
   },
   {
     id: "job-10",
-    title: "High-traffic concrete reset",
+    title: "Ground-mounted solar panel cleaning",
     description:
-      "Tire marks and surface grime cleaned from a busy concrete area to restore a brighter look.",
+      "Ground-mounted solar array cleaned from dust and buildup to restore panel efficiency.",
     collage: "/client-images/gallery-commercial-collage.jpg",
     before: "/client-images/gallery-commercial-collage.jpg",
     after: "/client-images/gallery-commercial-collage.jpg",
-    tags: ["Commercial", "Concrete Cleaning"],
+    tags: ["Solar", "Commercial"],
   },
   {
     id: "job-11",
