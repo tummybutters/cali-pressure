@@ -6,6 +6,7 @@ export type GalleryJob = {
   before: string;
   after: string;
   tags: string[];
+  flipCollage?: boolean;
 };
 
 // Each entry describes one real California Pressure Washing job from the
@@ -44,23 +45,24 @@ export const gallery: GalleryJob[] = [
   },
   {
     id: "job-08",
-    title: "Solar panel roof cleaning",
+    title: "Garden path cleaning",
     description:
-      "Rooftop solar panels cleaned from dusty and hazy to clearer glass with an ocean-view backdrop.",
+      "Stepping stone walkway refreshed — grime and buildup cleared for a brighter, cleaner path.",
     collage: "/client-images/gallery-solar-roof-collage.jpg",
     before: "/client-images/gallery-solar-roof-collage.jpg",
     after: "/client-images/gallery-solar-roof-collage.jpg",
-    tags: ["Solar", "Roof"],
+    tags: ["Walkway", "Residential"],
   },
   {
     id: "job-09",
-    title: "Stone exterior house wash",
+    title: "Tile patio cleaning",
     description:
-      "Dark organic staining lifted from a stone home exterior for a brighter, even finish.",
+      "Terracotta tile patio cleaned from built-up staining to a fresher, more even finish.",
     collage: "/client-images/gallery-stone-house-collage.jpg",
     before: "/client-images/gallery-stone-house-collage.jpg",
     after: "/client-images/gallery-stone-house-collage.jpg",
-    tags: ["House Wash", "Mildew"],
+    tags: ["Patio", "Concrete Cleaning"],
+    flipCollage: true,
   },
   {
     id: "job-10",
@@ -74,13 +76,13 @@ export const gallery: GalleryJob[] = [
   },
   {
     id: "job-11",
-    title: "Tile roof and solar refresh",
+    title: "Commercial concrete cleaning",
     description:
-      "Aerial before/after showing a cleaner tile roof surface around rooftop solar panels.",
+      "Tire marks and surface grime cleared from a commercial concrete area.",
     collage: "/client-images/gallery-roof-collage.jpg",
     before: "/client-images/gallery-roof-collage.jpg",
     after: "/client-images/gallery-roof-collage.jpg",
-    tags: ["Roof Wash", "Solar"],
+    tags: ["Commercial", "Concrete Cleaning"],
   },
   {
     id: "job-12",

@@ -84,6 +84,7 @@ export default function GalleryPage() {
               beforeAlt={`${featured.title} — before`}
               afterAlt={`${featured.title} — after`}
               aspect="4 / 3"
+              objectPosition="left center"
             />
           </div>
         </Container>
@@ -121,6 +122,7 @@ export default function GalleryPage() {
                     fill
                     sizes="(min-width: 1024px) 420px, (min-width: 640px) 50vw, 100vw"
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    style={job.flipCollage ? { transform: "scaleX(-1)" } : undefined}
                   />
                   <div className="absolute inset-x-0 bottom-0 flex gap-2 p-3">
                     <span className="rounded bg-black/70 px-2 py-1 text-[10px] font-semibold tracking-[0.2em] text-white/90">

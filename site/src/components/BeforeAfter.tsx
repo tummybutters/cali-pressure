@@ -9,6 +9,7 @@ type Props = {
   afterAlt?: string;
   aspect?: string;
   priority?: boolean;
+  objectPosition?: string;
 };
 
 export default function BeforeAfter({
@@ -18,6 +19,7 @@ export default function BeforeAfter({
   afterAlt = "After",
   aspect = "4 / 3",
   priority = false,
+  objectPosition = "center",
 }: Props) {
   const wrapRef = useRef<HTMLDivElement>(null);
   const [pos, setPos] = useState(50);
@@ -74,6 +76,7 @@ export default function BeforeAfter({
         sizes="(min-width: 1024px) 640px, 100vw"
         priority={priority}
         className="object-cover"
+        style={{ objectPosition }}
       />
 
       <div
@@ -87,6 +90,7 @@ export default function BeforeAfter({
           sizes="(min-width: 1024px) 640px, 100vw"
           priority={priority}
           className="object-cover"
+          style={{ objectPosition }}
         />
       </div>
 

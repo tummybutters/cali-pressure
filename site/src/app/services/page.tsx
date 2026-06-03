@@ -177,6 +177,24 @@ export default function ServicesPage() {
         </Container>
       </section>
 
+      <section className="py-16 sm:py-20">
+        <Container>
+          <div className="card-surface p-8 sm:p-12 text-center max-w-2xl mx-auto">
+            <p className="eyebrow mb-4">Don&apos;t See What You Need?</p>
+            <h2 className="serif-head text-3xl text-white sm:text-4xl mb-4">
+              We do more than what&apos;s listed here.
+            </h2>
+            <p className="text-base text-[var(--color-text-muted)] mb-8">
+              Our team handles a wide range of exterior cleaning projects beyond the services above. If you have something in mind, just reach out — we&apos;ll let you know if we can help.
+            </p>
+            <Link href="/booking" className="btn-primary">
+              Contact Us to Find Out
+              <ArrowRight />
+            </Link>
+          </div>
+        </Container>
+      </section>
+
       <CTABand />
     </>
   );
