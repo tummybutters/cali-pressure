@@ -125,7 +125,10 @@ export default function GalleryPage() {
                 key={job.id}
                 className="card-surface group overflow-hidden"
               >
-                <div className="relative aspect-[4/3] overflow-hidden">
+                <div
+                  className="relative overflow-hidden"
+                  style={{ aspectRatio: job.aspectRatio ?? "4/3" }}
+                >
                   <Image
                     src={job.collage}
                     alt={`${job.title} — before and after`}

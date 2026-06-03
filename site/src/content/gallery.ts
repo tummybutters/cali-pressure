@@ -7,6 +7,7 @@ export type GalleryJob = {
   after: string;
   tags: string[];
   flipCollage?: boolean;
+  aspectRatio?: string;
 };
 
 // Each entry describes one real California Pressure Washing job from the
@@ -84,6 +85,7 @@ export const gallery: GalleryJob[] = [
     before: "/client-images/gallery-roof-collage.jpg",
     after: "/client-images/gallery-roof-collage.jpg",
     tags: ["Commercial", "Concrete Cleaning"],
+    aspectRatio: "1/1",
   },
   {
     id: "job-12",
