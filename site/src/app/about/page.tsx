@@ -69,7 +69,7 @@ const process = [
 const stats = [
   { value: "50+", label: "Five-star Google reviews" },
   { value: "5.0", label: "Average rating" },
-  { value: "100s", label: "Homes cleaned across SoCal" },
+  { value: "300+", label: "Jobs completed across SoCal" },
   { value: "1", label: "Owner — on every single job" },
 ];
 

@@ -16,10 +16,10 @@ export const metadata: Metadata = {
 };
 
 const categories = [
-  { label: "Concrete", count: 4 },
-  { label: "House wash", count: 3 },
-  { label: "Solar & roof", count: 2 },
-  { label: "Walkways", count: 3 },
+  { label: "Google Rating", count: "5★" },
+  { label: "Same-Week Availability", count: "✓" },
+  { label: "Jobs Completed", count: "300+" },
+  { label: "Owner-Operated", count: "✓" },
 ];
 
 export default function GalleryPage() {
