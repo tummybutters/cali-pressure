@@ -4,7 +4,6 @@ import type { Metadata } from "next";
 import Container from "@/components/Container";
 import PageHero from "@/components/PageHero";
 import CTABand from "@/components/CTABand";
-import BeforeAfter from "@/components/BeforeAfter";
 import { ArrowRight } from "@/components/Icons";
 import { gallery } from "@/content/gallery";
 import { site } from "@/content/site";
